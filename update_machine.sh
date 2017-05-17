@@ -31,23 +31,6 @@ function brew_cask_update {
   echo "Finished Homebrew Cask Update\n\n"
 }
 
-function monorail_update {
-  echo "Starting Monorail Update"
-  cd ~/git/monorail
-  git stash --quiet --include-untracked
-  git checkout master
-  git pull --rebase
-  bundle
-  bundle exec rake db:migrate db:test:prepare
-  bundle exec rake i18n:js:export
-  # reindex elastic search
-  # recreate perk store
-  git reset --quiet --hard
-  git checkout -
-  git stash pop --quiet
-  echo "Finished Monorail Update\n\n"
-}
-
 function vim_plugins_update {
   echo "Starting Vim Plugin Update"
   cd ~
@@ -69,14 +52,13 @@ function backup {
   brew leaves >! brew_packages.txt
   brew cask list >> brew_packages.txt
   brew tap >> brew_packages.txt
-  mackup backup --force
+  # TODO: commit to dotfiles repo
   echo "Finished Backup\n\n"
 }
 
 app_store_update
 brew_update
 brew_cask_update
-monorail_update
-vim_plugins_update
-zprezto_update
-backup
+# vim_plugins_update
+# zprezto_update
+# backup
