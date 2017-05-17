@@ -8,8 +8,8 @@
 
     " Commands {
         Plug 'tpope/vim-commentary'
-        Plug '/usr/local/opt/fzf'
-        Plug 'junegunn/fzf.vim'
+        " Plug '/usr/local/opt/fzf'
+        " Plug 'junegunn/fzf.vim'
     " }
 
     " Completion {
@@ -62,10 +62,10 @@
 
 " Vim UI {
     " Coloring {
-        set termguicolors                       " True color support
+        " set termguicolors                       " True color support
         set background=light                    " Assume a light background
         colorscheme PaperColor                  " PaperColor theme
-        highlight Folded gui=bold guibg=none    " Remove background from folds
+        " highlight Folded gui=bold guibg=none    " Remove background from folds
     " }
 
     " Windowing {
@@ -221,7 +221,7 @@
 
     " Vim-airline {
         if isdirectory(expand("~/.config/nvim/plugged/vim-airline"))
-          let g:airline_powerline_fonts = 1
+          " let g:airline_powerline_fonts = 1
           let g:airline_theme = 'papercolor'
           let g:airline#extensions#tabline#enabled = 1
         endif
