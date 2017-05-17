@@ -1,0 +1,13 @@
+[push]
+  default = simple
+[user]
+  name = Sam Coe
+  initials = sc
+  email = sam.coe@icloud.com
+[core]
+  excludesfile = /Users/samcoe/.config/git/ignore
+  editor = nvim
+[fetch]
+  prune = true
+[merge]
+  conflictstyle = diff3
