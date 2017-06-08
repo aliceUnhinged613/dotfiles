@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 function app_store_update {
   echo "Starting App Store Update"
