@@ -3,7 +3,7 @@
 [user]
   name = Sam Coe
   initials = sc
-  email = sam.coe@icloud.com
+	email = samcoe@github.com
 [core]
   excludesfile = /Users/samcoe/.config/git/ignore
   editor = nvim
