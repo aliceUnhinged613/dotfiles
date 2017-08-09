@@ -26,7 +26,7 @@ function brew_cask_update {
   echo "Starting Homebrew Cask Update"
   cd ~
   brew update
-  brew cu # --all --yes --cleanup https://github.com/buo/homebrew-cask-upgrade
+  brew cu --all --yes --cleanup # https://github.com/buo/homebrew-cask-upgrade
   brew cask cleanup
   echo "Finished Homebrew Cask Update\n\n"
 }
@@ -40,9 +40,8 @@ function vim_plugins_update {
 
 function zprezto_update {
   echo "Starting Prezto Update"
-  cd ~/.zprezto
-  git pull
-  git submodule update --init --recursive
+  cd ~
+  zprezto-update
   echo "Finished Prezto Update\n\n"
 }
 
@@ -59,6 +58,6 @@ function backup {
 app_store_update
 brew_update
 brew_cask_update
-# vim_plugins_update
-# zprezto_update
-# backup
+vim_plugins_update
+zprezto_update
+backup

@@ -8,8 +8,7 @@
 
     " Commands {
         Plug 'tpope/vim-commentary'
-        " Plug '/usr/local/opt/fzf'
-        " Plug 'junegunn/fzf.vim'
+        Plug 'junegunn/fzf.vim', { 'do': './install --bin' }
     " }
 
     " Completion {
@@ -62,10 +61,10 @@
 
 " Vim UI {
     " Coloring {
-        " set termguicolors                       " True color support
+        set termguicolors                       " True color support
         set background=light                    " Assume a light background
         colorscheme PaperColor                  " PaperColor theme
-        " highlight Folded gui=bold guibg=none    " Remove background from folds
+        highlight Folded gui=bold guibg=none    " Remove background from folds
     " }
 
     " Windowing {
