@@ -8,7 +8,7 @@
 
     " Commands {
         Plug 'tpope/vim-commentary'
-        Plug 'junegunn/fzf.vim', { 'do': './install --bin' }
+        Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
     " }
 
     " Completion {
