@@ -11,3 +11,7 @@
   prune = true
 [merge]
   conflictstyle = diff3
+[github]
+	user = samcoe
+[credential]
+	helper = osxkeychain
