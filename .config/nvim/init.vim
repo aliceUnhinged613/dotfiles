@@ -1,8 +1,10 @@
+" vim:foldmarker={,}:foldmethod=marker:foldlevel=0
+
 " Vim Plug {
     call plug#begin()
 
     " Code Display {
-        Plug 'NLKNguyen/papercolor-theme'
+        Plug 'mhartington/oceanic-next'
         Plug 'yggdroot/indentline'
     " }
 
@@ -17,7 +19,6 @@
 
     " Integrations {
         Plug 'airblade/vim-rooter'
-        Plug 'janko-m/vim-test', { 'for': 'ruby' }
     " }
 
     " Interface {
@@ -28,9 +29,8 @@
 
     " Language {
         Plug 'sheerun/vim-polyglot'
-        Plug 'tpope/vim-surround'
+        Plug 'w0rp/ale'
         Plug 'tpope/vim-rails', { 'for': 'ruby' }
-        Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
     " }
 
     call plug#end()
@@ -45,14 +45,11 @@
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
     set hidden                          " Allow buffer switching without saving
-    set iskeyword-=.                    " '.' is an end of word designator
-    set iskeyword-=#                    " '#' is an end of word designator
-    set iskeyword-=-                    " '-' is an end of word designator
 
-    set history=1000                      " Store a ton of history (default is 20)
-    set backup                            " Backups are nice ...
+    set history=1000                      " Store a ton of history
+    set backup                            " Turn on backups
     set backupdir=~/.config/nvim/backup// " Set backup folder
-    set undofile                          " So is persistent undo ...
+    set undofile                          " Turn on persistent undo
     set undodir=~/.config/nvim/undo//     " Set undo folder
     set undolevels=1000                   " Maximum number of changes that can be undone
     set undoreload=10000                  " Maximum number lines to save for undo on a buffer reload
@@ -61,26 +58,26 @@
 
 " Vim UI {
     " Coloring {
-        set termguicolors                       " True color support
-        set background=light                    " Assume a light background
-        colorscheme PaperColor                  " PaperColor theme
-        highlight Folded gui=bold guibg=none    " Remove background from folds
+        set termguicolors                 " True color support
+        set background=dark               " Dark background
+        syntax enable                     " Enable syntax highlighting
+        colorscheme OceanicNext           " PaperColor theme
     " }
 
     " Windowing {
-        set splitright                      " Puts new vsplit windows to the right of the current
-        set splitbelow                      " Puts new split windows to the bottom of the current
-        set scrolljump=7                    " Lines to scroll when cursor leaves screen
-        set scrolloff=5                     " Minimum lines to keep above and below cursor
-        set tabpagemax=15                   " Only show 15 tabs
-        set winminheight=0                  " Windows can be 0 line high
+        set splitright                    " Puts new vsplit windows to the right of the current
+        set splitbelow                    " Puts new split windows to the bottom of the current
+        set scrolljump=7                  " Lines to scroll when cursor leaves screen
+        set scrolloff=5                   " Minimum lines to keep above and below cursor
+        set tabpagemax=15                 " Only show 15 tabs
+        set winminheight=0                " Windows can be 0 line high
     " }
 
     " Misc {
-        set cursorline                      " Highlight current line
-        set relativenumber                  " Line numbers relative to current line
-        set number                          " Line numbers are shown
-        set showcmd                         " Show partial commands in status line and Selected characters/lines in visual mode
+        set cursorline                    " Highlight current line
+        set relativenumber                " Line numbers relative to current line
+        set number                        " Line numbers are shown
+        set showcmd                       " Show partial commands in status line and Selected characters/lines in visual mode
     " }
 " }
 
@@ -95,6 +92,7 @@
         set softtabstop=2               " Let backspace delete indent
         set foldenable                  " Auto fold code
         set foldmethod=indent           " Fold code based on indents
+        set foldlevelstart=10           " Most folds open by default
         set foldnestmax=10              " Max level of nested folds
         set list
         set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
@@ -123,6 +121,9 @@
 
     " Escape insert mode
     inoremap jk <ESC>
+
+    " This allows esc to return to normal mode in terminal but breaks escaping fzf
+    " tnoremap <Esc> <C-\><C-n>
 
     " Easier moving between tabs and windows
     nnoremap <C-J> <C-W>j<C-W><ESC>
@@ -156,12 +157,6 @@
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
 
-    " Disable ex mode
-    nnoremap Q <Nop>
-
-    " Quit instead of going to command history
-    nnoremap q: :q
-
     " Code folding
     nnoremap <leader><Space> za
 
@@ -190,7 +185,7 @@
     augroup CustomAutoCommands
       autocmd!
 
-      " Remove trailing white space and ^M chars
+      " Remove trailing white space
       autocmd BufWritePre * call StripTrailingWhitespace()
 
       " Auto save on buffer leave and focus loss
@@ -198,11 +193,17 @@
 
       " Supertab completion chaining
       autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
-
     augroup END
 " }
 
 " Plugins {
+    " Ale {
+        if isdirectory(expand("~/.config/nvim/plugged/ale"))
+          let g:airline#extensions#ale#enabled = 1
+          let g:ale_ruby_rubocop_executable = "bin/rubocop"
+        endif
+    " }
+
     " NerdTree {
         if isdirectory(expand("~/.config/nvim/plugged/nerdtree"))
           let NERDTreeShowHidden=1
@@ -220,8 +221,8 @@
 
     " Vim-airline {
         if isdirectory(expand("~/.config/nvim/plugged/vim-airline"))
-          " let g:airline_powerline_fonts = 1
-          let g:airline_theme = 'papercolor'
+          let g:airline_powerline_fonts = 1
+          let g:airline_theme = 'oceanicnext'
           let g:airline#extensions#tabline#enabled = 1
         endif
     " }
@@ -229,34 +230,14 @@
     " Vim-fzf {
         if isdirectory(expand("~/.config/nvim/plugged/fzf.vim/"))
           nmap <c-p> :FZF<CR>
+          nmap <c-f> :Ag<CR>
         endif
     " }
 
     " Vim-rooter {
         if isdirectory(expand("~/.config/nvim/plugged/vim-rooter"))
-          let g:rooter_disable_map = 1
-          let g:rooter_change_directory_for_non_project_files = 1
+          let g:rooter_change_directory_for_non_project_files = "current"
           let g:rooter_silent_chdir = 1
-        endif
-    " }
-
-    " Vim-ruby {
-        if isdirectory(expand("~/.config/nvim/plugged/vim-ruby"))
-          let g:rubycomplete_buffer_loading = 1
-          let g:rubycomplete_rails = 1
-          let g:rubycomplete_load_gemfile = 1
-          let ruby_operators = 1
-        endif
-    " }
-
-    " Vim-test {
-        if isdirectory(expand("~/.config/nvim/plugged/vim-test/"))
-          let test#strategy = "neovim"
-          nnoremap <silent> <leader>t :TestNearest<CR>
-          nnoremap <silent> <leader>T :TestFile<CR>
-          nnoremap <silent> <leader>a :TestSuite<CR>
-          nnoremap <silent> <leader>l :TestLast<CR>
-          nnoremap <silent> <leader>g :TestVisit<CR>
         endif
     " }
 " }

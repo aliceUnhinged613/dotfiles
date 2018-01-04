@@ -3,7 +3,7 @@
 [user]
   name = Sam Coe
   initials = sc
-	email = samcoe@github.com
+  email = samcoe@github.com
 [core]
   excludesfile = /Users/samcoe/.config/git/ignore
   editor = nvim
@@ -12,6 +12,12 @@
 [merge]
   conflictstyle = diff3
 [github]
-	user = samcoe
+  user = samcoe
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+  insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/

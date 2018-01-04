@@ -33,3 +33,4 @@ tags
 
 # Ruby #
 .bundle
+.idea
