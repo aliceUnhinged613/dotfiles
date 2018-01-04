@@ -1,0 +1,69 @@
+#!/usr/local/bin/zsh
+
+function app_store_update {
+  echo "Starting App Store Update"
+  osascript -e '
+    tell application "App Store"
+      activate
+      delay 0.5
+      tell application "System Events" to keystroke "5" using {command down}
+    end tell
+  '
+  echo "Finished App Store Update\n\n"
+}
+
+function brew_update {
+  echo "Starting Homebrew Update"
+  cd ~
+  brew update
+  brew upgrade
+  brew cleanup --force
+  brew prune --force
+  echo "Finished Homebrew Update\n\n"
+}
+
+function brew_cask_update {
+  echo "Starting Homebrew Cask Update"
+  cd ~
+  brew update
+  brew cu --all --yes --cleanup # https://github.com/buo/homebrew-cask-upgrade
+  brew cask cleanup
+  echo "Finished Homebrew Cask Update\n\n"
+}
+
+function brew_backup {
+  echo "Starting Homebrew Backup"
+  cd ~
+  brew leaves >! .Brewfile
+  brew cask list >> .Brewfile
+  brew tap >> .Brewfile
+  echo "Finished Homebrew Backup\n\n"
+}
+
+function vim_plugins_update {
+  echo "Starting Vim Plugin Update"
+  cd ~
+  nvim -c "PlugUpgrade | PlugUpdate | PlugClean! | qall"
+  echo "Finished Vim Plugin Update\n\n"
+}
+
+function zprezto_update {
+  echo "Starting Prezto Update"
+  cd ~
+  zprezto-update
+  echo "Finished Prezto Update\n\n"
+}
+
+function commit {
+  echo "Starting Server Commit"
+  cd ~
+  echo "Finished Server Commit\n\n"
+}
+
+app_store_update
+brew_update
+brew_cask_update
+brew_backup
+vim_plugins_update
+zprezto_update
+commit
