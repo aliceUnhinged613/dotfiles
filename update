@@ -2,13 +2,8 @@
 
 function app_store_update {
   echo "Starting App Store Update"
-  osascript -e '
-    tell application "App Store"
-      activate
-      delay 0.5
-      tell application "System Events" to keystroke "5" using {command down}
-    end tell
-  '
+  cd ~
+  mas upgrade
   echo "Finished App Store Update\n\n"
 }
 
@@ -55,6 +50,10 @@ function zprezto_update {
 function commit {
   echo "Starting Server Commit"
   cd ~
+  if ! config diff --quiet; then
+    config commit -a -m "$(date +%F) Update"
+    config push
+  fi
   echo "Finished Server Commit\n\n"
 }
 
