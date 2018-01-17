@@ -34,9 +34,7 @@ function brew_cask_update {
 function brew_backup {
   echo "Starting Homebrew Backup"
   cd ~
-  brew leaves >! .Brewfile
-  brew cask list >> .Brewfile
-  brew tap >> .Brewfile
+  brew bundle dump --force
   echo "Finished Homebrew Backup\n\n"
 }
 
