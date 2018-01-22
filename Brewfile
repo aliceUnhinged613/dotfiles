@@ -11,6 +11,8 @@ tap "beeftornado/rmtree"
 cask "java"
 brew "automake"
 brew "cmake"
+brew "docker", link: false
+brew "docker-machine", link: false
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
 brew "git"
