@@ -229,7 +229,8 @@
 
     " Vim-fzf {
         if isdirectory(expand("~/.config/nvim/plugged/fzf.vim/"))
-          nmap <c-p> :FZF<CR>
+          let $FZF_DEFAULT_COMMAND = 'ag --hidden --depth 10 -f -g ""'
+          nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
         endif
     " }
