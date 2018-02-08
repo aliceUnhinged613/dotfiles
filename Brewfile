@@ -11,34 +11,22 @@ tap "beeftornado/rmtree"
 cask "java"
 brew "automake"
 brew "cmake"
-brew "docker", link: false
-brew "docker-machine", link: false
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
 brew "git"
 brew "go"
 brew "glide"
-brew "gnupg"
 brew "go@1.8"
 brew "icu4c"
-brew "libtool"
-brew "imagemagick"
-brew "jansson"
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
-brew "lcov"
+brew "libtool"
 brew "mas"
-brew "md5sha1sum"
 brew "memcached", restart_service: true
 brew "mysql", restart_service: true
 brew "neovim"
 brew "nginx", restart_service: true
-brew "pidof"
-brew "postgresql"
-brew "rbenv"
 brew "redis", restart_service: true
-brew "socat"
-brew "softhsm"
 brew "the_silver_searcher"
 brew "zsh"
 brew "heroku/brew/heroku"
