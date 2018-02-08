@@ -44,10 +44,8 @@ cask "the-unarchiver"
 cask "transmission"
 cask "viscosity"
 cask "vlc"
-cask "vmware-fusion"
 cask "zoomus"
 cask "caskroom/fonts/font-fira-code"
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "PhotoScapeX", id: 929507092
