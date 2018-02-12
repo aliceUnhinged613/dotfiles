@@ -27,10 +27,3 @@ Temporary Items
 Session.vim
 .netrwhist
 *~
-
-# CTAGS #
-tags
-
-# Ruby #
-.bundle
-.idea
