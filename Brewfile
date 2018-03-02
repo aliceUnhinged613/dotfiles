@@ -1,4 +1,5 @@
 tap "heroku/brew"
+tap "samcoe/docker", "git@github.com:samcoe/homebrew-docker.git"
 tap "buo/cask-upgrade"
 tap "homebrew/core"
 tap "homebrew/bundle"
@@ -45,7 +46,6 @@ brew "zsh"
 brew "heroku/brew/heroku"
 cask "1password"
 cask "appcleaner"
-cask "docker"
 cask "dropbox"
 cask "flash-npapi"
 cask "iterm2"
@@ -59,6 +59,7 @@ cask "viscosity"
 cask "vlc"
 cask "zoomus"
 cask "caskroom/fonts/font-fira-code"
+cask "samcoe/docker/docker-42"
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
