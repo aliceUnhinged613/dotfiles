@@ -43,6 +43,7 @@ brew "redis", restart_service: true
 brew "socat"
 brew "softhsm"
 brew "the_silver_searcher"
+brew "vegeta"
 brew "zsh"
 brew "heroku/brew/heroku"
 cask "1password"
