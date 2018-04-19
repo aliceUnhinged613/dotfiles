@@ -36,14 +36,11 @@ brew "mysql", restart_service: true
 brew "neovim"
 brew "nginx", restart_service: true
 brew "pidof"
-brew "ruby-build"
-brew "rbenv"
 brew "readline"
 brew "redis", restart_service: true
 brew "socat"
 brew "softhsm"
 brew "the_silver_searcher"
-brew "vegeta"
 brew "zsh"
 brew "heroku/brew/heroku"
 cask "1password"
