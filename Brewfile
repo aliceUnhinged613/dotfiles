@@ -35,6 +35,7 @@ brew "mysql", restart_service: true
 brew "neovim"
 brew "nginx", restart_service: true
 brew "pidof"
+brew "pkg-config"
 brew "readline"
 brew "redis", restart_service: true
 brew "socat"
