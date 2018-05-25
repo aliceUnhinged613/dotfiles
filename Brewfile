@@ -44,7 +44,6 @@ brew "softhsm"
 brew "the_silver_searcher"
 brew "zsh"
 brew "heroku/brew/heroku"
-cask "1password"
 cask "android-file-transfer"
 cask "appcleaner"
 cask "dropbox"
@@ -64,6 +63,7 @@ cask "vlc"
 cask "zoomus"
 cask "caskroom/fonts/font-fira-code"
 cask "samcoe/docker/docker-42"
+mas "1Password", id: 443987910
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
