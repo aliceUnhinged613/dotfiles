@@ -38,6 +38,7 @@ brew "nginx", restart_service: true
 brew "pidof"
 brew "pkg-config"
 brew "readline"
+brew "postgresql"
 brew "redis", restart_service: true
 brew "socat"
 brew "softhsm"
