@@ -38,11 +38,13 @@ brew "nginx", restart_service: true
 brew "pidof"
 brew "pkg-config"
 brew "readline"
-brew "postgresql"
+brew "postgresql", restart_service: true
+brew "psqlodbc", args: ["with-libiodbc", "without-unixodbc"]
 brew "redis", restart_service: true
 brew "socat"
 brew "softhsm"
 brew "the_silver_searcher"
+brew "unixodbc"
 brew "zsh"
 brew "heroku/brew/heroku"
 cask "android-file-transfer"
@@ -50,8 +52,10 @@ cask "appcleaner"
 cask "dropbox"
 cask "encryptme"
 cask "flash-npapi"
+cask "font-fira-code"
 cask "iterm2"
 cask "java"
+cask "mysqlworkbench"
 cask "onyx"
 cask "plex-media-server"
 cask "slack"
@@ -62,7 +66,6 @@ cask "transmission"
 cask "viscosity"
 cask "vlc"
 cask "zoomus"
-cask "homebrew/cask-fonts/font-fira-code"
 cask "samcoe/docker/docker-42"
 mas "1Password", id: 443987910
 mas "Keynote", id: 409183694
