@@ -32,13 +32,14 @@ brew "lcov"
 brew "mas"
 brew "md5sha1sum"
 brew "memcached", restart_service: true
-brew "mysql", restart_service: true
+brew "mysql@5.7", restart_service: true
 brew "neovim"
 brew "nginx", restart_service: true
 brew "pidof"
 brew "pkg-config"
 brew "readline"
 brew "postgresql", restart_service: true
+brew "protobuf"
 brew "psqlodbc", args: ["with-libiodbc", "without-unixodbc"]
 brew "redis", restart_service: true
 brew "socat"
@@ -49,6 +50,7 @@ brew "zsh"
 brew "heroku/brew/heroku"
 cask "android-file-transfer"
 cask "appcleaner"
+cask "dbeaver-community"
 cask "dropbox"
 cask "encryptme"
 cask "flash-npapi"
