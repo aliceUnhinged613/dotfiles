@@ -32,7 +32,7 @@ brew "lcov"
 brew "mas"
 brew "md5sha1sum"
 brew "memcached", restart_service: true
-brew "mysql@5.7", restart_service: true
+brew "mysql@5.7", restart_service: true, link: true
 brew "neovim"
 brew "nginx", restart_service: true
 brew "pidof"
@@ -41,6 +41,8 @@ brew "readline"
 brew "postgresql", restart_service: true
 brew "protobuf"
 brew "psqlodbc", args: ["with-libiodbc", "without-unixodbc"]
+brew "ruby-build"
+brew "rbenv"
 brew "redis", restart_service: true
 brew "socat"
 brew "softhsm"
@@ -57,7 +59,6 @@ cask "flash-npapi"
 cask "font-fira-code"
 cask "iterm2"
 cask "java"
-cask "mysqlworkbench"
 cask "onyx"
 cask "plex-media-server"
 cask "slack"
