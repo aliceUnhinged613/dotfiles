@@ -9,16 +9,41 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "samcoe/docker", "git@github.com:samcoe/homebrew-docker.git"
+brew "autoconf"
+brew "automake"
+brew "cmake"
+brew "docker", link: false
+brew "docker-machine", link: false
+brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
 brew "git"
+brew "go"
+brew "glide"
+brew "hyperscan"
+brew "libtool"
+brew "xz"
+brew "imagemagick"
+brew "jansson"
+brew "jq"
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
+brew "lcov"
 brew "mas"
+brew "md5sha1sum"
+brew "memcached", restart_service: true
 brew "mysql@5.7", restart_service: true, link: true
 brew "neovim"
+brew "nginx", restart_service: true
+brew "pidof"
+brew "pkg-config"
 brew "readline"
 brew "postgresql", restart_service: true
-brew "xz"
+brew "protobuf"
+brew "ruby-build"
+brew "rbenv"
+brew "redis", restart_service: true
+brew "socat"
+brew "softhsm"
 brew "the_silver_searcher"
 brew "zsh"
 brew "heroku/brew/heroku"
