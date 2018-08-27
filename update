@@ -12,8 +12,8 @@ function brew_update {
   cd ~
   brew update
   brew upgrade
-  brew cleanup --force
-  brew prune --force
+  brew cleanup
+  brew prune
   echo "Finished Homebrew Update\n\n"
 }
 
@@ -22,7 +22,6 @@ function brew_cask_update {
   cd ~
   brew update
   brew cu --all --yes --cleanup # https://github.com/buo/homebrew-cask-upgrade
-  brew cask cleanup
   echo "Finished Homebrew Cask Update\n\n"
 }
 
