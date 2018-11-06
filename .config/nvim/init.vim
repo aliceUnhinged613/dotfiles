@@ -4,7 +4,7 @@
     call plug#begin()
 
     " Code Display {
-        Plug 'mhartington/oceanic-next'
+        Plug 'morhetz/gruvbox'
         Plug 'yggdroot/indentline'
     " }
 
@@ -23,7 +23,6 @@
 
     " Interface {
         Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
         Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind' }
     " }
 
@@ -61,7 +60,7 @@
         set termguicolors                 " True color support
         set background=dark               " Dark background
         syntax enable                     " Enable syntax highlighting
-        colorscheme OceanicNext           " PaperColor theme
+        colorscheme gruvbox               " PaperColor theme
     " }
 
     " Windowing {
@@ -222,7 +221,6 @@
     " Vim-airline {
         if isdirectory(expand("~/.config/nvim/plugged/vim-airline"))
           let g:airline_powerline_fonts = 1
-          let g:airline_theme = 'oceanicnext'
           let g:airline#extensions#tabline#enabled = 1
         endif
     " }
