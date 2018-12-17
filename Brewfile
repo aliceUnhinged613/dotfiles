@@ -40,6 +40,7 @@ brew "pkg-config"
 brew "readline"
 brew "postgresql", restart_service: true
 brew "protobuf"
+brew "rakudo-star"
 brew "ruby-build"
 brew "rbenv"
 brew "redis", restart_service: true
