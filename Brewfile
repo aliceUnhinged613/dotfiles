@@ -32,9 +32,11 @@ brew "lcov"
 brew "mas"
 brew "md5sha1sum"
 brew "memcached", restart_service: true
+brew "mkcert"
 brew "mysql@5.7", restart_service: true, link: true
 brew "neovim"
 brew "nginx", restart_service: true
+brew "nss"
 brew "pidof"
 brew "pkg-config"
 brew "readline"
