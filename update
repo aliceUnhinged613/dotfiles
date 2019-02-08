@@ -13,7 +13,6 @@ function brew_update {
   brew update
   brew upgrade
   brew cleanup
-  brew prune
   echo "Finished Homebrew Update\n\n"
 }
 
