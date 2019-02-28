@@ -40,7 +40,7 @@ brew "nss"
 brew "pidof"
 brew "pkg-config"
 brew "readline"
-brew "postgresql", restart_service: true
+brew "postgresql"
 brew "protobuf"
 brew "rakudo-star"
 brew "ruby-build"
