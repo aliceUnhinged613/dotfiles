@@ -26,7 +26,7 @@ brew "xz"
 brew "imagemagick"
 brew "jansson"
 brew "jq"
-brew "launch_socket_server", restart_service: true
+brew "launch_socket_server"
 brew "launchdns", restart_service: true
 brew "lcov"
 brew "mas"
