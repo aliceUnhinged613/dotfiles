@@ -7,11 +7,16 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+brew "autoconf"
 brew "cmake"
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
 brew "git"
 brew "gnupg"
+brew "go"
+brew "hyperscan"
+brew "jansson"
+brew "jq"
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
 brew "mas"
@@ -21,13 +26,16 @@ brew "mysql@5.7", restart_service: true, link: true
 brew "neovim"
 brew "nginx", restart_service: true
 brew "nss"
+brew "pkg-config"
 brew "rakudo-star"
+brew "readline"
 brew "redis", restart_service: true
 brew "xz"
 brew "the_silver_searcher"
 brew "zsh"
 cask "1password"
 cask "appcleaner"
+cask "backblaze"
 cask "docker-edge"
 cask "dropbox"
 cask "encryptme"
