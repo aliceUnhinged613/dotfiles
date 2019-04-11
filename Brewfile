@@ -14,10 +14,11 @@ brew "fzf"
 brew "git"
 brew "gnupg"
 brew "go"
+brew "hivemind"
 brew "hyperscan"
 brew "jansson"
 brew "jq"
-brew "launch_socket_server"
+brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
 brew "mas"
 brew "memcached", restart_service: true
