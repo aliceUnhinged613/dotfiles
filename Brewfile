@@ -8,6 +8,10 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 brew "autoconf"
+brew "aws-iam-authenticator"
+brew "readline"
+brew "xz"
+brew "awscli"
 brew "cmake"
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
@@ -18,7 +22,8 @@ brew "hivemind"
 brew "hyperscan"
 brew "jansson"
 brew "jq"
-brew "launch_socket_server"
+brew "kubernetes-cli", link: false
+brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
 brew "mas"
 brew "memcached", restart_service: true
@@ -28,8 +33,6 @@ brew "neovim"
 brew "nginx", restart_service: true
 brew "nss"
 brew "pkg-config"
-brew "readline"
-brew "xz"
 brew "protobuf"
 brew "rakudo-star"
 brew "redis", restart_service: true
