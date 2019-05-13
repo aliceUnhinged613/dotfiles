@@ -1,5 +1,6 @@
 tap "beeftornado/rmtree"
 tap "buo/cask-upgrade"
+tap "caskroom/cask"
 tap "github/bootstrap"
 tap "github/packages"
 tap "homebrew/bundle"
@@ -9,6 +10,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 brew "autoconf"
+brew "automake"
 brew "aws-iam-authenticator"
 brew "readline"
 brew "xz"
@@ -18,28 +20,36 @@ brew "docker", link: false
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
 brew "git"
-brew "gnupg"
 brew "go"
+brew "glide"
+brew "gnupg"
 brew "hivemind"
 brew "hyperscan"
+brew "libtool"
+brew "imagemagick"
 brew "jansson"
 brew "jq"
 brew "kubernetes-cli", link: false
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
+brew "lcov"
 brew "mas"
+brew "md5sha1sum"
 brew "memcached", restart_service: true
 brew "mkcert"
 brew "mysql@5.7", restart_service: true, link: true
 brew "neovim"
 brew "nginx", restart_service: true
 brew "nss"
+brew "pidof"
 brew "pkg-config"
 brew "protobuf"
 brew "rakudo-star"
 brew "ruby-build"
 brew "rbenv"
 brew "redis", restart_service: true
+brew "socat"
+brew "softhsm"
 brew "the_silver_searcher"
 brew "zsh"
 brew "github/packages/awssume"
