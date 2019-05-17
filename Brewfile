@@ -69,6 +69,6 @@ cask "transmission"
 cask "viscosity"
 cask "vlc"
 cask "zoomus"
-mas "com.apple.iWork.Keynote", id: 409183694
-mas "com.apple.iWork.Numbers", id: 409203825
-mas "com.apple.iWork.Pages", id: 409201541
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
