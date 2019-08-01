@@ -33,6 +33,7 @@ brew "kubernetes-cli", link: false
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
 brew "lcov"
+brew "libsodium"
 brew "mas"
 brew "md5sha1sum"
 brew "memcached", restart_service: true
