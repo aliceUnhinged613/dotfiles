@@ -16,6 +16,7 @@ brew "readline"
 brew "xz"
 brew "awscli"
 brew "cmake"
+brew "container-diff"
 brew "docker", link: false
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
