@@ -71,7 +71,6 @@ cask "spectacle"
 cask "spotify"
 cask "the-unarchiver"
 cask "transmission"
-cask "viscosity"
 cask "vlc"
 cask "zoomus"
 mas "AdGuard for Safari", id: 1440147259
