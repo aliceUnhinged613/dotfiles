@@ -54,6 +54,7 @@ brew "rbenv"
 brew "redis", restart_service: true
 brew "socat"
 brew "softhsm"
+brew "ssdeep"
 brew "the_silver_searcher"
 brew "zsh"
 brew "github/bootstrap/kustomize@2.0"
