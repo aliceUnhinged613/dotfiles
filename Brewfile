@@ -78,3 +78,4 @@ mas "AdGuard for Safari", id: 1440147259
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Time Out", id: 402592703
