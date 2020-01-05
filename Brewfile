@@ -75,6 +75,7 @@ cask "transmission"
 cask "vlc"
 cask "zoomus"
 mas "AdGuard for Safari", id: 1440147259
+mas "Fotor Photo Editor", id: 503039729
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
