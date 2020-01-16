@@ -17,6 +17,7 @@ brew "xz"
 brew "awscli"
 brew "cmake"
 brew "container-diff"
+brew "coreutils"
 brew "docker", link: false
 brew "elasticsearch@2.4", restart_service: true
 brew "fzf"
@@ -37,7 +38,7 @@ brew "launchdns", restart_service: true
 brew "lcov"
 brew "libsodium"
 brew "mas"
-brew "md5sha1sum"
+brew "md5sha1sum", link: false
 brew "memcached", restart_service: true
 brew "mkcert"
 brew "mysql@5.7", restart_service: true
