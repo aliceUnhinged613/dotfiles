@@ -19,7 +19,7 @@ brew "cmake"
 brew "container-diff"
 brew "coreutils"
 brew "docker", link: false
-brew "elasticsearch@2.4", restart_service: true
+brew "elasticsearch@2.4"
 brew "fzf"
 brew "git"
 brew "go"
@@ -33,17 +33,17 @@ brew "imagemagick"
 brew "jansson"
 brew "jq"
 brew "kubernetes-cli", link: false
-brew "launch_socket_server", restart_service: true
-brew "launchdns", restart_service: true
+brew "launch_socket_server"
+brew "launchdns"
 brew "lcov"
 brew "libsodium"
 brew "mas"
 brew "md5sha1sum", link: false
-brew "memcached", restart_service: true
+brew "memcached"
 brew "mkcert"
-brew "mysql@5.7", restart_service: true
+brew "mysql@5.7"
 brew "neovim"
-brew "nginx", restart_service: true
+brew "nginx"
 brew "nss"
 brew "overmind"
 brew "pidof"
@@ -52,7 +52,7 @@ brew "protobuf"
 brew "rakudo-star"
 brew "ruby-build"
 brew "rbenv"
-brew "redis", restart_service: true
+brew "redis"
 brew "socat"
 brew "softhsm"
 brew "ssdeep"
