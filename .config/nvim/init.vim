@@ -60,7 +60,7 @@
         set termguicolors                 " True color support
         set background=dark               " Dark background
         syntax enable                     " Enable syntax highlighting
-        colorscheme gruvbox               " PaperColor theme
+        colorscheme gruvbox               " Gruvbox theme
     " }
 
     " Windowing {
@@ -230,6 +230,7 @@
           let $FZF_DEFAULT_COMMAND = 'ag --hidden --depth 10 -f -g ""'
           nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
+          nmap <c-l> :BLines<CR>
           let g:fzf_colors =
           \ { 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
