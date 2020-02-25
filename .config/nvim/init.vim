@@ -230,7 +230,7 @@
           let $FZF_DEFAULT_COMMAND = 'ag --hidden --depth 10 -f -g ""'
           nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
-          nmap <c-l> :BLines<CR>
+          nmap <c-i> :BLines<CR>
           let g:fzf_colors =
           \ { 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
