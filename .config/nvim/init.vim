@@ -10,11 +10,8 @@
 
     " Commands {
         Plug 'tpope/vim-commentary'
-        Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-    " }
-
-    " Completion {
-        Plug 'ervandew/supertab'
+        Plug '/usr/local/opt/fzf'
+        Plug 'junegunn/fzf.vim'
     " }
 
     " Integrations {
@@ -93,7 +90,7 @@
         set foldmethod=indent           " Fold code based on indents
         set foldlevelstart=10           " Most folds open by default
         set foldnestmax=10              " Max level of nested folds
-        set list
+        set list                        " Highlight problematic whitespace
         set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
     " }
 
@@ -108,9 +105,8 @@
         set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
         set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
         set nojoinspaces                " Prevents inserting two spaces after punctuation on a join
-        set pastetoggle=<F12>           " Sane indentation on pastes
         set omnifunc=syntaxcomplete#Complete
-        set completeopt=menu,preview,longest
+        set completeopt=longest,menuone,preview
     " }
 " }
 
@@ -183,15 +179,8 @@
 " Autocmds {
     augroup CustomAutoCommands
       autocmd!
-
-      " Remove trailing white space
-      autocmd BufWritePre * call StripTrailingWhitespace()
-
       " Auto save on buffer leave and focus loss
       autocmd BufLeave,FocusLost * silent! wa
-
-      " Supertab completion chaining
-      autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     augroup END
 " }
 
@@ -200,21 +189,16 @@
         if isdirectory(expand("~/.config/nvim/plugged/ale"))
           let g:airline#extensions#ale#enabled = 1
           let g:ale_ruby_rubocop_executable = "bin/rubocop"
+          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"] }
+          let g:ale_fix_on_save = 1
         endif
     " }
 
     " NerdTree {
         if isdirectory(expand("~/.config/nvim/plugged/nerdtree"))
+          let g:airline#extensions#nerdtree_status = 1
           let NERDTreeShowHidden=1
           nnoremap <leader>nt :NERDTreeFind<CR>
-        endif
-    " }
-
-    " Supertab {
-        if isdirectory(expand("~/.config/nvim/plugged/supertab"))
-          let g:SuperTabDefaultCompletionType = "context"
-          let g:SuperTabLongestEnhanced = 1
-          let g:SuperTabLongestHighlight = 1
         endif
     " }
 
@@ -222,29 +206,28 @@
         if isdirectory(expand("~/.config/nvim/plugged/vim-airline"))
           let g:airline_powerline_fonts = 1
           let g:airline#extensions#tabline#enabled = 1
+          let g:airline_section_y= ""
+          let g:airline#extensions#tabline#formatter = "unique_tail_improved"
+          let g:airline#extensions#tabline#show_tab_type = 0
+          let g:airline#extensions#tabline#buffer_idx_mode = 1
+          nmap <leader>1 <Plug>AirlineSelectTab1
+          nmap <leader>2 <Plug>AirlineSelectTab2
+          nmap <leader>3 <Plug>AirlineSelectTab3
+          nmap <leader>4 <Plug>AirlineSelectTab4
+          nmap <leader>5 <Plug>AirlineSelectTab5
+          nmap <leader>6 <Plug>AirlineSelectTab6
+          nmap <leader>7 <Plug>AirlineSelectTab7
+          nmap <leader>8 <Plug>AirlineSelectTab8
+          nmap <leader>9 <Plug>AirlineSelectTab9
         endif
     " }
 
     " Vim-fzf {
         if isdirectory(expand("~/.config/nvim/plugged/fzf.vim/"))
-          let $FZF_DEFAULT_COMMAND = 'ag --hidden --depth 10 -f -g ""'
           nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
+          nmap <c-l> :Lines<CR>
           nmap <c-b> :BLines<CR>
-          let g:fzf_colors =
-          \ { 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Ignore'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
         endif
     " }
 
@@ -253,18 +236,5 @@
           let g:rooter_change_directory_for_non_project_files = "current"
           let g:rooter_silent_chdir = 1
         endif
-    " }
-" }
-
-" Functions {
-    " Strip whitespace {
-        function! StripTrailingWhitespace()
-          let _s=@/
-          let l = line(".")
-          let c = col(".")
-          %s/\s\+$//e
-          let @/=_s
-          call cursor(l, c)
-        endfunction
     " }
 " }
