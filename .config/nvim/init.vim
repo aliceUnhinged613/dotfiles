@@ -226,7 +226,7 @@
         if isdirectory(expand("~/.config/nvim/plugged/fzf.vim/"))
           nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
-          nmap <c-l> :Lines<CR>
+          nmap <c-n> :Lines<CR>
           nmap <c-b> :BLines<CR>
         endif
     " }
