@@ -1,6 +1,12 @@
 " vim:foldmarker={,}:foldmethod=marker:foldlevel=0
 
 " Vim Plug {
+    if empty(glob('~/.config/nvim/autoload/plug.vim'))
+      silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
     call plug#begin()
 
     " Code Display {
@@ -50,6 +56,7 @@
     set undolevels=1000                   " Maximum number of changes that can be undone
     set undoreload=10000                  " Maximum number lines to save for undo on a buffer reload
     set directory=~/.config/nvim/swap//   " Set swap folder
+    set shada="NONE"                      " Disable shada
 " }
 
 " Vim UI {
@@ -197,7 +204,7 @@
     " NerdTree {
         if isdirectory(expand("~/.config/nvim/plugged/nerdtree"))
           let g:airline#extensions#nerdtree_status = 1
-          let NERDTreeShowHidden=1
+          let NERDTreeShowHidden = 1
           nnoremap <leader>nt :NERDTreeFind<CR>
         endif
     " }
@@ -206,7 +213,7 @@
         if isdirectory(expand("~/.config/nvim/plugged/vim-airline"))
           let g:airline_powerline_fonts = 1
           let g:airline#extensions#tabline#enabled = 1
-          let g:airline_section_y= ""
+          let g:airline_section_y = ""
           let g:airline#extensions#tabline#formatter = "unique_tail_improved"
           let g:airline#extensions#tabline#show_tab_type = 0
           let g:airline#extensions#tabline#buffer_idx_mode = 1
