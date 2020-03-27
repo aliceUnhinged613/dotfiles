@@ -31,6 +31,7 @@ brew "hyperscan"
 brew "libtool"
 brew "imagemagick"
 brew "jansson"
+brew "jemalloc"
 brew "jq"
 brew "kubernetes-cli", link: false
 brew "launch_socket_server", restart_service: true
