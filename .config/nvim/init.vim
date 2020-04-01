@@ -176,11 +176,24 @@
     cnoremap w!! w !sudo tee % >/dev/null
 
     " Adjust views to the same size
-    nnoremap <Leader>= <C-w>=
+    nnoremap <leader>= <C-w>=
 
     " Easier horizontal scrolling
     nnoremap zl zL
     nnoremap zh zH
+" }
+
+" Functions {
+  " Open scratch buffer
+  nnoremap <leader>s :call Scratch()<CR>
+  function Scratch()
+    vsplit
+    enew
+    setlocal noswapfile
+    setlocal buflisted
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+  endfunction
 " }
 
 " Autocmds {
