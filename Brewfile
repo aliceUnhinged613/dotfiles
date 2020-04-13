@@ -68,6 +68,7 @@ cask "backblaze"
 cask "docker-edge"
 cask "dropbox"
 cask "encryptme"
+cask "firefox-developer-edition"
 cask "font-hasklig"
 cask "font-jetbrains-mono"
 cask "kitty"
@@ -78,7 +79,6 @@ cask "the-unarchiver"
 cask "transmission"
 cask "vlc"
 cask "zoomus"
-mas "AdGuard for Safari", id: 1440147259
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
