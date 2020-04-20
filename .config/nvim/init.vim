@@ -244,6 +244,7 @@
 
     " Vim-fzf {
         if isdirectory(expand("~/.config/nvim/plugged/fzf.vim/"))
+          let g:fzf_preview_window = ''
           nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
           nmap <c-n> :Lines<CR>
