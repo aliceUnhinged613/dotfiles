@@ -16,3 +16,4 @@ export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export LESSHISTFILE=/dev/null
 export HISTFILE="${ZDOTDIR:-$HOME}/.zhistory"
+export GOPATH='~/github/go'
