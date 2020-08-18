@@ -210,7 +210,7 @@
         if isdirectory(expand("~/.config/nvim/plugged/ale"))
           let g:airline#extensions#ale#enabled = 1
           let g:ale_ruby_rubocop_executable = "bin/rubocop"
-          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"] }
+          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"], "go": ["gofmt", "goimports"] }
           let g:ale_fix_on_save = 1
         endif
     " }
@@ -257,6 +257,32 @@
         if isdirectory(expand("~/.config/nvim/plugged/vim-rooter"))
           let g:rooter_change_directory_for_non_project_files = "current"
           let g:rooter_silent_chdir = 1
+        endif
+    " }
+
+    " Vim-go {
+        if isdirectory(expand("~/.config/nvim/plugged/vim-go"))
+          " Disable autosave functions
+          let g:go_fmt_autosave = 0
+          let g:go_mod_fmt_autosave = 0
+          let g:go_asmfmt_autosave = 0
+          let g:go_metalinter_autosave = 0
+          let g:go_imports_autosave = 0
+
+          " Enable highlighting
+          let g:go_highlight_structs = 1
+          let g:go_highlight_interfaces = 1
+          let g:go_highlight_types = 1
+          let g:go_highlight_fields = 1
+          let g:go_highlight_functions = 1
+          let g:go_highlight_function_calls = 1
+          let g:go_highlight_operators = 1
+          let g:go_highlight_extra_types = 1
+          let g:go_highlight_build_constraints = 0
+          let g:go_highlight_generate_tags = 0
+
+          let g:go_auto_sameids = 1   " Highlight uses of variable
+          let g:go_auto_type_info = 1 " Show types in status bar
         endif
     " }
 " }
