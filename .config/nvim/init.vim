@@ -26,13 +26,13 @@
 
     " Interface {
         Plug 'vim-airline/vim-airline'
-        Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind' }
+        Plug 'scrooloose/nerdtree'
     " }
 
     " Language {
         Plug 'sheerun/vim-polyglot'
         Plug 'w0rp/ale'
-        Plug 'fatih/vim-go', { 'for': 'go' }
+        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " }
 
     call plug#end()
