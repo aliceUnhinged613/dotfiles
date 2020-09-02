@@ -32,7 +32,6 @@
     " Language {
         Plug 'sheerun/vim-polyglot'
         Plug 'w0rp/ale'
-        Plug 'tpope/vim-rails', { 'for': 'ruby' }
         Plug 'fatih/vim-go', { 'for': 'go' }
     " }
 
