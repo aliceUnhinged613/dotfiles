@@ -30,9 +30,9 @@
     " }
 
     " Language {
+        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
         Plug 'sheerun/vim-polyglot'
         Plug 'w0rp/ale'
-        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " }
 
     call plug#end()
