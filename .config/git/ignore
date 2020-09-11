@@ -1,9 +1,9 @@
-# MAC OSX #
+# Mac OSX
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
+# Icon
 Icon
 
 # Thumbnails
@@ -20,7 +20,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# VIM #
+# Vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
