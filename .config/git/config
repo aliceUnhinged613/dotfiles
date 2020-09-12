@@ -1,21 +1,26 @@
-[push]
-  default = simple
-[user]
-  name = Sam Coe
-  initials = sc
-  email = samcoe@github.com
 [core]
   excludesfile = /Users/samcoe/.config/git/ignore
   editor = nvim
+[user]
+  name = Sam Coe
+  initials = sc
+  email = samcoe@users.noreply.github.com
+	signingkey = 8E322C20F811D086
+[commit]
+	gpgsign = true
 [fetch]
   prune = true
 [pull]
   ff = only
+[push]
+  default = simple
 [merge]
   conflictstyle = diff3
-[github]
-  user = samcoe
 [credential]
   helper = osxkeychain
+[github]
+  user = samcoe
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
+[gpg]
+	program = gpg

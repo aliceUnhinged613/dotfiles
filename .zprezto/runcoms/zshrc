@@ -13,8 +13,10 @@ fi
 # Customize to your needs...
 alias config='/usr/bin/git --git-dir=/Users/samcoe/.cfg/ --work-tree=/Users/samcoe'
 alias ghd='/Users/samcoe/github/cli/bin/ghd'
+
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export LESSHISTFILE=/dev/null
 export HISTFILE="${ZDOTDIR:-$HOME}/.zhistory"
 export GOPATH="$HOME/github/go"
+export GPG_TTY=$(tty)
