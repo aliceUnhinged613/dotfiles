@@ -94,7 +94,7 @@
         set tabstop=2                   " An indentation every two columns
         set softtabstop=2               " Let backspace delete indent
         set foldenable                  " Auto fold code
-        set foldmethod=indent           " Fold code based on indents
+        set foldmethod=syntax           " Fold code based on syntax
         set foldlevelstart=10           " Most folds open by default
         set foldnestmax=10              " Max level of nested folds
         set list                        " Highlight problematic whitespace
