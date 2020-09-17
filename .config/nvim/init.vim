@@ -281,7 +281,7 @@
           let g:go_highlight_generate_tags = 0
 
           " let g:go_auto_sameids = 1   " Highlight uses of variable
-          let g:go_auto_type_info = 1 " Show types in status bar
+          " let g:go_auto_type_info = 1 " Show types in status bar
         endif
     " }
 " }
