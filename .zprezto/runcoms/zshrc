@@ -11,12 +11,21 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias config='/usr/bin/git --git-dir=/Users/samcoe/.cfg/ --work-tree=/Users/samcoe'
-alias ghd='/Users/samcoe/github/cli/bin/ghd'
-
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export LESSHISTFILE=/dev/null
 export HISTFILE="${ZDOTDIR:-$HOME}/.zhistory"
 export GOPATH="$HOME/github/go"
 export GPG_TTY=$(tty)
+
+unset LESS_TERMCAP_mb
+unset LESS_TERMCAP_md
+unset LESS_TERMCAP_me
+unset LESS_TERMCAP_se
+unset LESS_TERMCAP_so
+unset LESS_TERMCAP_ue
+unset LESS_TERMCAP_us
+
+alias config='/usr/bin/git --git-dir=/Users/samcoe/.cfg/ --work-tree=/Users/samcoe'
+alias ghd='$HOME/github/cli/bin/ghd'
+alias dlv='$GOPATH/bin/dlv'

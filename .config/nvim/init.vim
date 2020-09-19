@@ -282,6 +282,10 @@
 
           " let g:go_auto_sameids = 1   " Highlight uses of variable
           " let g:go_auto_type_info = 1 " Show types in status bar
+          " let g:go_term_enabled = 1
+          " let g:go_term_mode = "vsplit"
+          " let g:go_term_close_on_exit = 0
+          " let g:go_term_reuse = 1
         endif
     " }
 " }
